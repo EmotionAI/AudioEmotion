@@ -1,1 +1,3 @@
-for file in *.mp4; do ffmpeg -i "$file" "${file%.mp4}".wav; done
+for file in *.mp4; 
+do ffmpeg -y -i "$file" "${file%.mp4}".wav; 
+done
