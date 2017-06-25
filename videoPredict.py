@@ -9,7 +9,8 @@ import scipy.io.wavfile as wav
 from pdb import set_trace as bp
 import numpy as np
 from keras.models import load_model
-import sys
+import sys, os
+
 
 sys.path.append('/usr/local/lib/python2.7/site-packages')
 import cv2
@@ -27,7 +28,9 @@ window_step = window_length/2.0
 num_cep_coeffs = 13
 out_dir = 'Output/'
 #print sys.argv
-sound_file = sys.argv[1] + '.wav'#'test/v1H.wav'
+command = 'test/convert.sh'
+os.system(command)
+sound_file = sys.argv[1] + '.wav'
 vid_file = sys.argv[1] + '.mp4'
 
 out_file = out_dir + sys.argv[1].split('/')[-1] + '_out'+'.mp4'
